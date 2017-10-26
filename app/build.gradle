@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+        applicationId "net.hockeyapp.demo.android"
+        minSdkVersion 9
+        versionCode 1
+        targetSdkVersion 22
+        versionName "1.0.0"
+        manifestPlaceholders = [HOCKEYAPP_APP_ID: "38b50fda56a7426ca45da56ee8f7a5b2"]
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    testCompile 'junit:junit:4.12'
+
+    compile 'net.hockeyapp.android:HockeySDK:4.1.4'
+
+}
